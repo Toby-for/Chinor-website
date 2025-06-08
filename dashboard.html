@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ildiz Community - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded shadow text-center space-y-6">
+            <h1 class="text-3xl font-bold">Welcome <span id="user-email">user@example.com</span></h1>
+            <a href="#" class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Start SAT Practice</a>
+            <a href="/logout" class="inline-block text-gray-600 hover:underline">Logout</a>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const email = params.get('email');
+        if (email) {
+            document.getElementById('user-email').textContent = email;
+        }
+    </script>
+</body>
+</html>
